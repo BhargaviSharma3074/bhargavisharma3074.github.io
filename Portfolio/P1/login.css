@@ -6,11 +6,14 @@ body {
 }
 
 .container {
-    width: 320px;
+    display: flex;
+    width: 500px;
     padding: 20px;
     border: 1px solid black;
     border-radius: 8px;
     text-align: center;
+    justify-content: space-between;
+    gap: 40px;
 }
 
 .container input {
