@@ -15,6 +15,18 @@ const validateUser = () => {
     }
 };
 
+const userList = () => {
+    let x = "<h4>Registered Users: </h4>";
+    if(users.length==0)
+    {
+        return "<p>No registered users.</p>";
+    }
+    users.forEach(user => {
+        x+=`<p> Name: ${user.name}; Email: ${user.email}; Password: ${user.pass}; Balance: ${user.balance}</p>`;
+    })
+    return x;
+};
+
 const loginForm = () => {
     const str = `
     <div style='display:flex'>
@@ -30,7 +42,7 @@ const loginForm = () => {
     </div>
     <div>
     <h2>List of Users</h2>
-    
+    ${userList()}
     </div>
     </div>
     `
@@ -45,12 +57,13 @@ const saveUser = () => {
         name, //name:name - in new model of js, no need to write name and value if both are same, writing once is enough
         email, //email:email
         pass, //pass:pass
+        balance: 1000,
     });
     loginForm()
 };
 
 const registerForm = () => {
-    const str = `
+    const str = `<div>
     <h3>Register</h3>
     <label>Name</label>
     <input type='text' placeholder='Enter name' id='txtname' required><br><br>
@@ -61,13 +74,13 @@ const registerForm = () => {
     <p><button onclick='saveUser()'>Submit</button></p>
     <p><button onclick='loginForm()'>Already a member? Login here</button></p>
     `
-    root.innerHTML = str
+    root.innerHTML = str+"</div>"
 }
 
 const showHome = () => {
-    const str = `
+    const str = `<div>
     <h3>Welcome!</h3>
     <p><button onclick='loginForm()'>Logout</button></p>
     `
-    root.innerHTML = str
+    root.innerHTML = str+"</div>"
 }

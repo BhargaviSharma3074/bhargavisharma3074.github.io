@@ -7,13 +7,14 @@ body {
 
 .container {
     display: flex;
-    width: 500px;
-    padding: 20px;
-    border: 1px solid black;
-    border-radius: 8px;
-    text-align: center;
-    justify-content: space-between;
-    gap: 40px;
+    justify-content: center;
+}
+
+.container div {
+    border: 1px solid gray;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
 }
 
 .container input {
@@ -22,4 +23,9 @@ body {
     margin: 8px 0;
     border: 1px solid black;
     border-radius: 4px;
+}
+
+.container button{
+    width: 100%;
+    box-sizing: border-box;
 }
