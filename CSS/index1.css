@@ -1,0 +1,39 @@
+h1,
+h3 {
+    background-color: teal;
+    color: beige;
+}
+
+.class1 {
+    background-color: cadetblue;
+    color: wheat;
+}
+
+#dvBox {
+    background-color: coral;
+    color: whitesmoke;
+}
+
+.main {
+    border: 1px solid black;
+}
+
+.main div {
+    background-color: cornflowerblue;
+    color: beige;
+}
+.parent{
+    background-color: grey;
+    width: 100%;
+    height: 200px;
+    margin: auto;
+}
+.child{
+    background-color: pink;
+    padding: 20px;
+    width: 80%;
+    height: 100px;
+    margin: auto;
+   
+    
+}
