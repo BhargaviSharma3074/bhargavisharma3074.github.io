@@ -1,0 +1,90 @@
+/* Header full styling */
+header {
+    background-color: white;
+    padding: 20px 40px;
+    color: black;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+/* Logo left */
+.logo {
+    flex: 1;
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+}
+
+/* Search bar center */
+.search-form {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+}
+
+.search-form input[type="text"] {
+    padding: 8px 15px;
+    border-radius: 20px 0 0 20px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.search-form button {
+    padding: 8px 15px;
+    border-radius: 0 20px 20px 0;
+    border: none;
+    background-color: #1f3b73;
+    color: black;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Support + Cart right */
+.header-right {
+    flex: 1.5;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 30px;
+    color: black;
+}
+
+.support,
+.cart {
+    text-align: right;
+    line-height: 1.2;
+}
+
+.support small,
+.cart small {
+    font-size: 12px;
+    color: #ccc;
+}
+
+.support strong,
+.cart strong {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.icons {
+    display: flex;
+    font-size: 20px;
+}
+
+.icon {
+    background: #ffffff22;
+    border-radius: 50%;
+    padding: 4px;
+    color: black;
+    cursor: pointer;
+}
+
