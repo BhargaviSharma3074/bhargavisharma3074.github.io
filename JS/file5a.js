@@ -6,9 +6,16 @@
 // }
 // greet("Bhargavi");
 
-function add(a,b)
+// function add(a,b)
+// {
+//     return a+b;
+// }
+// let sum = add(5,6);
+// console.log(sum);
+
+function add()
 {
-    return a+b;
+    console.log(arguments);
+    console.log(arguments.length);
 }
-let sum = add(5,6);
-console.log(sum)
+add(1,2,3,4,5,6,7,8,9);
