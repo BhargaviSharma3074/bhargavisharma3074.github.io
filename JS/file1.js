@@ -1,3 +1,5 @@
+//INTRODUCTION TO JAVASCRIPT
+
 let studentName = "John"
 let age = 20
 let promoted = true
