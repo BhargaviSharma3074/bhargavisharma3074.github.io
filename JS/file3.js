@@ -1,3 +1,5 @@
+// CONDITIONAL STATEMENTS
+
 // let a = 10;
 // let b = 12;
 // // if(a>b)
@@ -30,7 +32,18 @@
 // else if(v2>v1 && v2>v3) console.log("v2 is greater");
 // else console.log("v3 is greater");
 
-let x = 5;
-let y = 2;
+// let x = 5;
+// let y = 2;
 // x>y ? console.log("x is greater") : console.log("y is greater");
-x > y && console.log("x is greater");
+// x > y && console.log("x is greater");
+
+// // let a = 20;
+// // let a = null;
+// let a;
+// let value = a || 10; //if value of a is given, the value of a is printed, if not, 10 would be printed
+// console.log(value);
+
+let a = null;
+// let a;
+let value = a ?? 10; //works the same way as ||
+console.log(value);
