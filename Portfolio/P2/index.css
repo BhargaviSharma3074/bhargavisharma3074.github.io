@@ -1,90 +1,179 @@
-/* Header full styling */
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background: #f8f8f8;
+}
+
 header {
-    background-color: white;
-    padding: 20px 40px;
-    color: black;
+    background: white;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
 }
 
-.header-container {
+.nav-bar {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    gap: 30px;
-}
-
-/* Logo left */
-.logo {
-    flex: 1;
-    font-size: 24px;
-    font-weight: bold;
-    color: black;
-}
-
-/* Search bar center */
-.search-form {
-    flex: 2;
-    display: flex;
-    justify-content: center;
-}
-
-.search-form input[type="text"] {
-    padding: 8px 15px;
-    border-radius: 20px 0 0 20px;
-    border: none;
-    outline: none;
-    font-size: 14px;
-    width: 100%;
-    max-width: 400px;
-}
-
-.search-form button {
-    padding: 8px 15px;
-    border-radius: 0 20px 20px 0;
-    border: none;
-    background-color: #1f3b73;
-    color: black;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-/* Support + Cart right */
-.header-right {
-    flex: 1.5;
-    display: flex;
     align-items: center;
-    justify-content: flex-end;
-    gap: 30px;
-    color: black;
+    flex-wrap: wrap;
 }
 
-.support,
-.cart {
-    text-align: right;
-    line-height: 1.2;
-}
-
-.support small,
-.cart small {
-    font-size: 12px;
-    color: #ccc;
-}
-
-.support strong,
-.cart strong {
-    font-size: 16px;
+.logo {
     font-weight: bold;
-}
-
-.icons {
-    display: flex;
     font-size: 20px;
 }
 
-.icon {
-    background: #ffffff22;
-    border-radius: 50%;
-    padding: 4px;
-    color: black;
+.logo span {
+    color: orange;
+    font-weight: normal;
+    font-size: 14px;
+    display: block;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background: #f0f0f0;
+    /* border: 1px solid #ccc; */
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 5px 10px;
+    width: 500px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.search-bar select {
+    border: none;
+    background: transparent;
+    border: 1px solid black;
+    padding: 8px 10px;
+    font-size: 14px;
+    outline: none;
+}
+
+.search-bar input {
+    border: none;
+    padding: 8px 10px;
+    flex: 1;
+    border: 1px solid black;
+    font-size: 14px;
+    outline: none;
+    background: transparent;
+}
+
+.search-bar button {
+    background: transparent;
+    color: #333;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 0 10px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.hero-section {
+    display: flex;
+    padding: 40px;
+    background: white;
+    justify-content: space-between;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.hero-text h1 {
+    font-size: 32px;
+}
+
+.hero-text button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
 }
 
+.hero-offers {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+    justify-content: center;
+}
+
+.offer {
+    background: #eee;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.categories,
+.brands,
+.products {
+    padding: 30px;
+    background: white;
+    margin-top: 20px;
+}
+
+.category-grid,
+.brand-slider,
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.product-card {
+    background: #f4f4f4;
+    padding: 15px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    padding: 40px;
+    background: #222;
+    color: white;
+    gap: 20px;
+}
+
+.footer-col input {
+    padding: 8px;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.footer-col button {
+    margin-top: 10px;
+    padding: 8px;
+    background: orange;
+    color: white;
+    border: none;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+footer p {
+    text-align: center;
+    background: #111;
+    color: #aaa;
+    padding: 10px;
+    margin: 0;
+}
