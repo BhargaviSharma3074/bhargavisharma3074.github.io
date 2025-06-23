@@ -46,7 +46,7 @@ header {
 .search-bar select {
     border: none;
     background: transparent;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     padding: 8px 10px;
     font-size: 14px;
     outline: none;
@@ -56,7 +56,7 @@ header {
     border: none;
     padding: 8px 10px;
     flex: 1;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     font-size: 14px;
     outline: none;
     background: transparent;
