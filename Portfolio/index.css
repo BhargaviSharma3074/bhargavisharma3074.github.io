@@ -79,6 +79,7 @@ header {
     margin-top: 30px;
     background-color: #0a1f44;
     color: white;
+    border: none;
 }
 
 .services {
@@ -88,6 +89,30 @@ header {
 }
 
 .services h2 {
+    color: #0a1f44;
+    font-size: 32px;
+    margin-bottom: 40px;
+}
+
+.projects {
+    background-color: #e8ecf4;
+    padding: 60px 40px;
+    text-align: center;
+}
+
+.projects h2 {
+    color: #0a1f44;
+    font-size: 32px;
+    margin-bottom: 40px;
+}
+
+.about {
+    background-color: #ffffff;
+    padding: 60px 40px;
+    text-align: center;
+}
+
+.about h2 {
     color: #0a1f44;
     font-size: 32px;
     margin-bottom: 40px;
