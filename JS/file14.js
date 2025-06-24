@@ -1,3 +1,5 @@
+// JAVASCRIPT OBJECT NOTATION (JSON)
+
 // const student = {
 //     name: "Omil",
 //     age: 21,

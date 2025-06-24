@@ -1,3 +1,4 @@
+// LET VS VAR KEYWORD
 var a = 10;
 if(10>5)
 {
