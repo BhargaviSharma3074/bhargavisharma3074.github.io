@@ -34,3 +34,59 @@ db.employees.aggregate({$project:{_id:0,name:1, salary:{$multiply:["$salary",12]
 
 // display salary that is gt than 3000 and show ctc instead of salary
 db.employees.aggregate({$match:{salary: {$gt: 3000}}},{$project:{_id:0,ctc:"$salary"}})
+
+
+
+db.address.insertMany([
+    {
+        studentId: ObjectId('685cdcba85b336c268748a61'), 
+        city: "Kolkata", 
+        country: "India"
+    }, 
+    {
+        studentId: ObjectId('685cdd2c85b336c268748a62'), 
+        city: "New York", 
+        country: "USA"
+    },
+    {
+        studentId: ObjectId('685cdd2c85b336c268748a63'), 
+        city: "Kyoto", 
+        country: "Japan"
+    },
+    {
+        studentId: ObjectId('685cdd2c85b336c268748a64'), 
+        city: "Seoul", 
+        country: "South Korea"
+    }
+]);
+
+db.students.aggregate([
+    {
+        $lookup: {
+            from: "address", 
+            localField: "_id", 
+            foreignField: "studentId", 
+            as:"address"
+        }
+    },
+    
+])
+
+db.students.aggregate([
+    {
+        $lookup: {
+            from: "address", 
+            localField: "_id", 
+            foreignField: "studentId", 
+            as:"address"
+        }
+    },
+    {$unwind: "$address"}, // used to unwind the array structure of the joined collections, and display as object
+    {$project: {name:1, "address.city": 1, "address.country":1}}
+])
+
+
+db.employees.aggregate([
+    {$project:{name:1, location:1}},
+    {$unwind: "$location"}
+])
