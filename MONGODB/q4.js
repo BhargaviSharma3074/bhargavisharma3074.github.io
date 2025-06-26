@@ -36,3 +36,25 @@ db.employees.find().sort({salary:-1}).limit(2)
 
 // display name and email add of one name
 db.users.find({name:"Bhargavi"},{_id:0,email:1,name:1})
+
+
+db.employees.insertMany([
+    {
+        name:"Amy", 
+        email:"amy@gmail.com", 
+        department: "HR", 
+        salary: 2000, 
+        location: ["NY","TX"], 
+        date: Date()
+    },
+    {
+        name:"Rafeal", 
+        email:"rafeal@gmail.com", 
+        department:"Admin", 
+        salary: 1500, 
+        location: ["OH","TX"], 
+        date:Date()
+    }
+]);
+
+db.employees.countDocuments()
