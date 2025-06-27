@@ -106,16 +106,8 @@ header {
     margin-bottom: 40px;
 }
 
-.about {
-    background-color: #ffffff;
-    padding: 60px 40px;
-    text-align: center;
-}
+.projects h3{
 
-.about h2 {
-    color: #0a1f44;
-    font-size: 32px;
-    margin-bottom: 40px;
 }
 
 .boxes {
@@ -145,6 +137,37 @@ header {
     font-size: 16px;
     line-height: 1.5;
     color: #555;
+}
+
+.skills {
+    background-color: #ffffff;
+    padding: 60px 40px;
+    text-align: center;
+}
+
+.skills h2 {
+    color: #0a1f44;
+    font-size: 32px;
+    margin-bottom: 40px;
+}
+
+.skill-boxes {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: center;
+    flex-wrap: wrap;
+
+}
+
+.skill-box {
+    flex: 1;
+    min-width: 360px;
+    background-color: #f1f4f9;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 
 footer {
