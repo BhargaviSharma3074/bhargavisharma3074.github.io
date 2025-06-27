@@ -1,4 +1,4 @@
-body {
+/* body {
     padding: 10px;
     display: flex;
     justify-content: center;
@@ -28,4 +28,83 @@ body {
 .container button{
     width: 100%;
     box-sizing: border-box;
+} */
+
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f6f8;
+    margin: 0;
+    padding: 40px;
+    color: #333;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2,
+h3,
+h4 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+    align-content: center;
+}
+
+label {
+    font-weight: 500;
+}
+
+input {
+    width: 100%;
+    padding: 8px 12px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-right: 10px;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+#errorText {
+    color: red;
+    font-weight: bold;
+}
+
+p {
+    margin-top: 10px;
+}
+
+div[style*="display:flex"] {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    
+}
+
+div[style*="display:flex"]>div {
+    flex: 1 1 300px;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px;
 }
