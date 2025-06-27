@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* li{
+            display: inline;
+            width: 200px;
+        } */
+        li{
+            display: inline-block; /*for menu items always try to use inline-block*/
+            width: 200px;
+        }
+        .flex{
+            display: flex;
+            flex-direction: column;  /*to get the div in vertical column, the default is horizontal line*/
+            justify-content: space-around;
+            align-items: center;
+            background-color: teal;
+            height: 200px;
+            flex-wrap: wrap;
+
+        }
+        .flex div{
+            border: 1px solid black;
+        }
+        .grid{
+            display: grid;
+            grid-template-columns: auto auto auto;
+            column-gap: 20px;
+            row-gap: 30px;
+            justify-content: space-around;
+            align-items: center;
+            background-color: pink;
+            height: 200px;
+        }
+        .grid div{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS Display Property</h1>
+    <h2>inine vs inline-block</h2>
+    <li>Home</li>
+    <li>Services</li>
+    <li>Projects</li>
+    <li>About</li>
+    <hr>
+    <h2>Flexbox</h2>
+    <div class="flex">
+        <div>Sample text. Sample text.</div> <!--div is a block level element, i.e, it will take the complete width-->
+        <div>Sample text. Sample text.</div> <!-- default display prop of div is block-->
+        <div>Sample text. Sample text.</div>
+        <div>Sample text. Sample text.</div>
+        <div>Sample text. Sample text.</div>
+        <div>Sample text. Sample text.</div>
+    </div>
+    <hr>
+    <h2>Grid</h2>
+    <div class="grid">
+        <div>Child 1</div> <!--div is a block level element, i.e, it will take the complete width-->
+        <div>Child 2</div> <!-- default display prop of div is block-->
+        <div>Child 3</div>
+        <div>Child 4</div>
+        <div>Child 5</div>
+        <div>Child 6</div>
+    </div>
+</body>
+</html>
