@@ -24,5 +24,5 @@ use mydatabase
 sh.enableSharding("mydatabase")
 sh.shardCollection("mydatabase.customers", { _id: 1 })
 sh.status()
-sh.getShardedDataDistribution()
+sh.getShardedDataDistribution() //run this after running the node js file (q.13.mjs)
 
