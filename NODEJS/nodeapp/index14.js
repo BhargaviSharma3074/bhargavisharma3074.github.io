@@ -1,10 +1,11 @@
 import mongoose from "mongoose";
 import express from "express";
-import bcrypt from "bcrypt";
-import jwt from "jsonwebtoken";
+// import bcrypt from "bcrypt";
+// import jwt from "jsonwebtoken";
+import userRouter from "./userRoute.js";
 
 const SECRET = "secret";
-
+// const userRouter = express.Router();
 const app = express();
 mongoose.connect("mongodb://localhost:27017/nodejs").then(() => {
     app.listen(8080, () => {
@@ -13,74 +14,91 @@ mongoose.connect("mongodb://localhost:27017/nodejs").then(() => {
 });
 
 
-// models > userModel
-const userSchema = mongoose.Schema({
-    name: {type:String},
-    email: {type:String, unique:true},
-    password: {type:String},
-    role: {type:String}
-},
-{ timestamps: true});
 
-const userModel = mongoose.model("User",userSchema);
+
+
+
+
+
+
+
+
+
+
+
+// ===============================================================================================================================================
+
+
+// // models > userModel
+// const userSchema = mongoose.Schema({
+//     name: {type:String},
+//     email: {type:String, unique:true},
+//     password: {type:String},
+//     role: {type:String, default: "user"}
+// },
+// { timestamps: true});
+
+// const userModel = mongoose.model("User",userSchema);
 
 // app.get("/users", (req, res) => {
 //     res.json({})
 // });
 
-app.use(express.json());
-app.post("/register", async (req, res) => {
-    try {const {name, email, password, role} = req.body;
-    const hashedpwd = await bcrypt.hash(password,10)
-    const user = {
-        name, 
-        email,
-        password: hashedpwd,
-        role,
-    };
-    const result = await userModel.create(user);
-    res.status(201).json(result);}
-    catch(err) {
-        console.log(err);
-        res.status(400).json({message: "Something went wrong!"});
-    }
-});
+// userRouter.use(express.json());
 
-const authenticate = (req,res,next) => {                            
-    try{
-    let token = req.headers.authorization.split(' ')[1];
-    const user = jwt.verify(token, SECRET);
-    req.role = user.role;
-    next();
+
+// userRouter.post("/register", async (req, res) => {
+//     try {const {name, email, password, role} = req.body;
+//     const hashedpwd = await bcrypt.hash(password,10)
+//     const user = {
+//         name, 
+//         email,
+//         password: hashedpwd,
+//         role,
+//     };
+//     const result = await userModel.create(user);
+//     res.status(201).json(result);}
+//     catch(err) {
+//         console.log(err);
+//         res.status(400).json({message: "Something went wrong!"});
+//     }
+// });
+
+// const authenticate = (req,res,next) => {                            
+//     try{
+//     let token = req.headers.authorization.split(' ')[1];
+//     const user = jwt.verify(token, SECRET);
+//     req.role = user.role;
+//     next();
     
-}
-    catch (err){
-        return res.status(400).json({message: "Invalid Token"});
-    }
-    return res.json(token);
-}
+// }
+//     catch (err){
+//         return res.status(400).json({message: "Invalid Token"});
+//     }
+//     return res.json(token);
+// }
 
-const authorize = (role) => {
-    return (req, res, next) => {
-        if(req.role === "admin")
-        {
-            next();
-        }
-        else
-        {
-            res.status(403).json({message: "Unauthorized Access!"})
-        }
-    }
-}
+// const authorize = (role) => {
+//     return (req, res, next) => {
+//         if(req.role === "admin")
+//         {
+//             next();
+//         }
+//         else
+//         {
+//             res.status(403).json({message: "Unauthorized Access!"})
+//         }
+//     }
+// }
 
-app.get("/users", authenticate, authorize("admin"),async (req, res) => {
-    try {const result = await userModel.find();
-    res.status(200).json(result);}
-    catch(err) {
-        console.log(err);
-        res.status(400).json({message: "Soemthing went wrong!"});
-    }
-});
+// userRouter.get("/users", authenticate, authorize("admin"),async (req, res) => {
+//     try {const result = await userModel.find();
+//     res.status(200).json(result);}
+//     catch(err) {
+//         console.log(err);
+//         res.status(400).json({message: "Soemthing went wrong!"});
+//     }
+// });
 
 // ===========================================================================================================================================
 // const SECRET = "secret";
@@ -111,45 +129,71 @@ app.get("/users", authenticate, authorize("admin"),async (req, res) => {
 // ===========================================================================================================================================
 
 
-app.post("/login", async (req,res) => {
-    try 
-    {
-        const {email, password} = req.body;
-        const user = await userModel.findOne({email});
+// userRouter.post("/login", async (req,res) => {
+//     try 
+//     {
+//         const {email, password} = req.body;
+//         const user = await userModel.findOne({email});
        
 
-        if(user)
-        {
-            const check = await bcrypt.compare(password, user.password);
-            if(check)
-            {
-                const userObj = {
-                    name:user.name, 
-                    email: user.email, 
-                    role:user.role
-                }
-                const token = jwt.sign(userObj, SECRET, {expiresIn:"1h"});
-                res.status(200).json({userObj, token});
-            }
-            else
-            {
-                res.status(400).json({message:"Invalid Password"})
-            } 
-        }
-        else
-        {
-            res.status(400).json({message: "User not found"})
-        }
-    }
-    catch(err) 
-    {
-        console.log(err);
-        res.status(400).json({message: "Something went wrong!"})
-    }
-});
+//         if(user)
+//         {
+//             const check = await bcrypt.compare(password, user.password);
+//             if(check)
+//             {
+//                 const userObj = {
+//                     name:user.name, 
+//                     email: user.email, 
+//                     role:user.role
+//                 }
+//                 const token = jwt.sign(userObj, SECRET, {expiresIn:"1h"});
+//                 res.status(200).json({userObj, token});
+//             }
+//             else
+//             {
+//                 res.status(400).json({message:"Invalid Password"})
+//             } 
+//         }
+//         else
+//         {
+//             res.status(400).json({message: "User not found"})
+//         }
+//     }
+//     catch(err) 
+//     {
+//         console.log(err);
+//         res.status(400).json({message: "Something went wrong!"})
+//     }
+// });
+
+// userRouter.patch("/:id", authenticate, authorize("admin"),async (req,res) => {
+//     try 
+//     {const id = req.params.id;
+//     const body = req.body;
+//     const result = await userModel.findByIdAndUpdate(id,body);
+//     res.status(200).json(result);}
+//     catch(err) {
+//         console.log(err);
+//         res.status(400).json({message:"something went wrong!"})
+//     }
+
+// })
+
+// userRouter.delete("/:id", authenticate, authorize("admin"), async (req,res) => {
+//     try{const id = req.params.id;
+//     const result = await userModel.findByIdAndDelete(id);
+//     res.status(200).json({message:"Deleted!"})}
+//     catch(err)
+//     {
+//         console.log(err);
+//         res.status(400).json({message: "Something Went Wrong!"});
+//     }
+// });
 
 
 
 
-const userRouter = express.Router();
+
+
+
 app.use("/api", userRouter);
