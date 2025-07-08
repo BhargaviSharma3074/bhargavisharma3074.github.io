@@ -55,7 +55,7 @@ const login = async(req, res) => {
         const user = await userModel.findOne({email});
         if(user)
         {
-            const isMatch = await bcrypt.comapare(password, user.password);
+            const isMatch = await bcrypt.compare(password, user.password);
             if(isMatch)
             {
                 const userObj = {
